@@ -9,3 +9,7 @@ https://github.com/BaeWooRam/BiometricTest/blob/2d18cb8e7f13f97322071777ee3c41f0
     </a>
     {{ post.content }}
 {% endfor %}
+
+```{r showChoro1}
+htmltools::includeHTML("./animations/demographics.html")
+```
