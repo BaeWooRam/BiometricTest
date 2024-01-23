@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("org.jetbrains.dokka")
 }
 
 android {
@@ -34,6 +35,15 @@ android {
         jvmTarget = "1.8"
     }
 }
+
+tasks.dokkaHtml.configure {
+    outputDirectory.set(File("../documentation/html"))
+}
+
+tasks.dokkaGfm.configure {
+    outputDirectory.set(File("../documentation/markdown"))
+}
+
 
 dependencies {
 
