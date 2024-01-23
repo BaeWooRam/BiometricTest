@@ -1,2 +1,2 @@
-[markdown](https://github.com/BaeWooRam/BiometricTest/blob/main/documentation/markdown/index.md)
-[html](https://github.com/BaeWooRam/BiometricTest/blob/main/documentation/html/index.html)
+[markdown](BiometricTest/blob/documentation/markdown/index.md)
+[html](BiometricTest/blob/main/documentation/html/index.html)
