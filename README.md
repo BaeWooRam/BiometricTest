@@ -1,2 +1,2 @@
-[markdown](blob/main/documentation/markdown/index.md)
-[html](blob/main/documentation/html/index.html)
+[markdown](BiometricTest/documentation/markdown/index.md)
+[html](BiometricTest/documentation/html/index.html)
