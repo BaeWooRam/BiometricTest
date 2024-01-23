@@ -1,0 +1,10 @@
+$dokka.format:html-v1
+$dokka.linkExtension:html
+$dokka.location:com.geekstudio.biometrictest////PointingToDeclaration/app/com.geekstudio.biometrictest/index.html
+$dokka.location:com.geekstudio.biometrictest/MainActivity.Companion///PointingToDeclaration/app/com.geekstudio.biometrictest/-main-activity/-companion/index.html
+$dokka.location:com.geekstudio.biometrictest/MainActivity.Companion/KEY_NAME/#/PointingToDeclaration/app/com.geekstudio.biometrictest/-main-activity/-companion/-k-e-y_-n-a-m-e.html
+$dokka.location:com.geekstudio.biometrictest/MainActivity.Companion/TIME_OUT/#/PointingToDeclaration/app/com.geekstudio.biometrictest/-main-activity/-companion/-t-i-m-e_-o-u-t.html
+$dokka.location:com.geekstudio.biometrictest/MainActivity///PointingToDeclaration/app/com.geekstudio.biometrictest/-main-activity/index.html
+$dokka.location:com.geekstudio.biometrictest/MainActivity/MainActivity/#/PointingToDeclaration/app/com.geekstudio.biometrictest/-main-activity/-main-activity.html
+com.geekstudio.biometrictest
+
