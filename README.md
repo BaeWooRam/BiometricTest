@@ -13,3 +13,20 @@ https://github.com/BaeWooRam/BiometricTest/blob/2d18cb8e7f13f97322071777ee3c41f0
 ```{r showChoro1}
 htmltools::includeHTML("./animations/demographics.html")
 ```
+
+---
+title: "Introduction"
+author: "chinsoon12"
+date: "April 10, 2016"
+output: html_document
+---
+
+<<insertHTML:[documentation/html/index.html]
+
+etc, etc, etc
+
+```{r, echo=FALSE}
+htmltools::includeHTML("documentation/html/index.html")
+```
+
+etc, etc, etc
