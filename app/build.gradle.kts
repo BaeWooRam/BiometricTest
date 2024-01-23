@@ -1,3 +1,6 @@
+import org.jetbrains.dokka.gradle.DokkaTask
+import java.net.URL
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
@@ -44,6 +47,27 @@ tasks.dokkaGfm.configure {
     outputDirectory.set(File("../documentation/markdown"))
 }
 
+tasks.withType<DokkaTask>().configureEach {
+    // ..
+    // general configuration section
+    // ..
+
+    dokkaSourceSets.configureEach {
+        // ..
+        // source set configuration section
+        // ..
+
+        sourceLink {
+            localDirectory.set(projectDir.resolve("src"))
+            remoteUrl.set(URL("https://github.com/BaeWooRam/BiometricTest/tree/main/documentation/html"))
+        }
+
+        externalDocumentationLink {
+            url.set(URL("https://github.com/BaeWooRam/BiometricTest/tree/main/documentation/html"))
+        }
+
+    }
+}
 
 dependencies {
 
