@@ -30,3 +30,5 @@ htmltools::includeHTML("documentation/html/index.html")
 ```
 
 etc, etc, etc
+
+https://htmlpreview.github.io/?https://github.com/BaeWooRam/BiometricTest/blob/2d18cb8e7f13f97322071777ee3c41f05c5d0f60/documentation/html/index.html
