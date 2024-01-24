@@ -1,5 +1,6 @@
+import org.jetbrains.dokka.base.DokkaBase
+import org.jetbrains.dokka.base.DokkaBaseConfiguration
 import org.jetbrains.dokka.gradle.DokkaTask
-import java.net.URL
 
 plugins {
     id("com.android.application")
@@ -40,32 +41,36 @@ android {
 }
 
 tasks.dokkaHtml.configure {
-    outputDirectory.set(File("../documentation/html"))
+    outputDirectory.set(buildDir.resolve("documentation/html"))
 }
 
 tasks.dokkaGfm.configure {
     outputDirectory.set(File("../documentation/markdown"))
 }
 
+buildscript {
+    dependencies {
+        classpath("org.jetbrains.dokka:dokka-base:1.9.10")
+    }
+}
+
 tasks.withType<DokkaTask>().configureEach {
-    // ..
-    // general configuration section
-    // ..
+    moduleName.set(project.name)
+    moduleVersion.set(project.version.toString())
+    suppressObviousFunctions.set(true)
+    suppressInheritedMembers.set(true)
 
-    dokkaSourceSets.configureEach {
-        // ..
-        // source set configuration section
-        // ..
-
-        sourceLink {
-            localDirectory.set(projectDir.resolve("src"))
-            remoteUrl.set(URL("https://github.com/BaeWooRam/BiometricTest/tree/main/documentation/html"))
+    dokkaSourceSets {
+        configureEach {
+            skipDeprecated.set(true)
+            noAndroidSdkLink.set(true)
         }
+    }
 
-        externalDocumentationLink {
-            url.set(URL("https://github.com/BaeWooRam/BiometricTest/tree/main/documentation/html"))
-        }
-
+    pluginConfiguration<DokkaBase, DokkaBaseConfiguration> {
+        footerMessage = "2015 HYUNDAI HT Co., Ltd."
+        separateInheritedMembers = false
+        mergeImplicitExpectActualDeclarations = false
     }
 }
 

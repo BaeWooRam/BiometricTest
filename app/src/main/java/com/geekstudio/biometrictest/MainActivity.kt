@@ -72,8 +72,14 @@ class MainActivity : AppCompatActivity() {
 
     /**
      *  생체 인증 팝업 초기화
+     *  @param[name] 설명1
+     *  @param[name2] 설명2
+     *  @return 리턴1
+     *  @throws ThrowsClass1
+     *  @sample identifier initBiometricPopUp() 그대로 사용하면 됨
+     *  @author 배우람
      */
-    private fun initBiometricPopUp() {
+    fun initBiometricPopUp() {
         val executor = ContextCompat.getMainExecutor(this)
         biometricPrompt = BiometricPrompt(this, executor,
             object : BiometricPrompt.AuthenticationCallback() {
@@ -139,9 +145,13 @@ class MainActivity : AppCompatActivity() {
     }
 
     /**
-     * 생체 인증 3단계 요청
+     *  생체 인증 3단계 요청
+     *  @param[name10] 설명1
+     *  @throws ThrowsClass2
+     *  @sample showBiometric() 그대로 사용하면 됨
+     *  @author 배우람2
      */
-    private fun showBiometric(){
+    fun showBiometric(){
         val build = BiometricPrompt.PromptInfo.Builder()
             .setTitle("Biometric login for my app")
             .setAllowedAuthenticators(Authenticators.BIOMETRIC_STRONG)
