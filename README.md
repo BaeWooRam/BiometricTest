@@ -1,35 +1,5 @@
-[markdown](documentation/markdown/index.md)
-[html](documentation/html/index.html)
-[https://raw.githubusercontent.com/BaeWooRam/BiometricTest/blob/2d18cb8e7f13f97322071777ee3c41f05c5d0f60/documentation/html/index.html](https://raw.githubusercontent.com/BaeWooRam/BiometricTest/2d18cb8e7f13f97322071777ee3c41f05c5d0f60/documentation/html/app/com.geekstudio.biometrictest/index.html)
+[_wrbae-생체 인식 관련 정리-180724-082357.pdf](https://github.com/user-attachments/files/16280029/_wrbae-.-180724-082357.pdf)
 
-{% include https://github.com/BaeWooRam/BiometricTest/blob/2d18cb8e7f13f97322071777ee3c41f05c5d0f60/documentation/html/index.html %}
-
-{% for post in site.posts %}
-    <a href="{{ post.url }}">
-        <h2>{{ post.title }} &mdash; {{ post.date | date_to_string }}</h2>
-    </a>
-    {{ post.content }}
-{% endfor %}
-
-```{r showChoro1}
-htmltools::includeHTML("./animations/demographics.html")
-```
-
----
-title: "Introduction"
-author: "chinsoon12"
-date: "April 10, 2016"
-output: html_document
----
-
-<<insertHTML:[documentation/html/index.html]
-
-etc, etc, etc
-
-```{r, echo=FALSE}
-htmltools::includeHTML("documentation/html/index.html")
-```
-
-etc, etc, etc
-
-https://htmlpreview.github.io/?https://github.com/BaeWooRam/BiometricTest/blob/2d18cb8e7f13f97322071777ee3c41f05c5d0f60/documentation/html/navigation.html
+### 생체인증 변경 여부 확인
+- https://medium.com/@yo___oo/android-%EC%83%9D%EC%B2%B4-%EC%9D%B8%EC%A6%9D-%EB%B3%80%EA%B2%BD-%EC%97%AC%EB%B6%80-%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95-e0eb7a6a1961
+- https://medium.com/@ghodasarabhaumik/android-fingerprint-enrolment-detection-detect-fingerprint-added-removed-68f8189766f9
