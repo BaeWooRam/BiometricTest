@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity(R.layout.main) {
                     }
 
                     /**
-                     * 생체인식(예: 지문, 얼굴 등)이 제시되었으나 사용자의 것으로 인식되지 않는 경우 호출됩니다.
+                     * 생체 인식(예: 지문, 얼굴 등)이 인식되면 호출되어 사용자가 성공적으로 인증되었음을 나타냅니다.
                      */
                     override fun onAuthenticationSucceeded(
                         result: BiometricPrompt.AuthenticationResult
@@ -167,7 +167,7 @@ class MainActivity : AppCompatActivity(R.layout.main) {
                     }
 
                     /**
-                     * 생체 인식(예: 지문, 얼굴 등)이 인식되면 호출되어 사용자가 성공적으로 인증되었음을 나타냅니다.
+                     * 생체인식(예: 지문, 얼굴 등)이 제시되었으나 사용자의 것으로 인식되지 않는 경우 호출됩니다.
                      */
                     override fun onAuthenticationFailed() {
                         super.onAuthenticationFailed()
