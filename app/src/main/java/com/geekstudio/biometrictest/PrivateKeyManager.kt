@@ -1,6 +1,5 @@
 package com.geekstudio.biometrictest
 
-import android.content.Context
 import android.security.keystore.KeyGenParameterSpec
 import android.security.keystore.KeyPermanentlyInvalidatedException
 import android.security.keystore.KeyProperties
@@ -8,27 +7,15 @@ import android.security.keystore.KeyProperties.BLOCK_MODE_CBC
 import android.security.keystore.KeyProperties.ENCRYPTION_PADDING_PKCS7
 import android.security.keystore.KeyProperties.KEY_ALGORITHM_AES
 import android.util.Log
-import androidx.biometric.BiometricManager
-import androidx.biometric.BiometricPrompt
-import com.geekstudio.biometrictest.MainActivity.Companion.DEFAULT_KEY_NAME
-import java.io.IOException
-import java.security.InvalidKeyException
 import java.security.KeyStore
-import java.security.KeyStoreException
-import java.security.NoSuchAlgorithmException
-import java.security.UnrecoverableKeyException
-import java.security.cert.CertificateException
 import javax.crypto.Cipher
 import javax.crypto.KeyGenerator
 import javax.crypto.SecretKey
 
-class BiometricManger(
-    private val context: Context
-) {
-    private var tag = this@BiometricManger.javaClass.simpleName
+class PrivateKeyManager {
+    private val tag = javaClass.simpleName
     private var keyStore: KeyStore? = null
     private var keyGenerator: KeyGenerator? = null
-    private var biometricPrompt: BiometricPrompt? = null
     private var defaultCipher: Cipher? = null
 
     fun setupKeyStoreAndKeyGenerator(keyStoreName: String, algorithm: String = KEY_ALGORITHM_AES) {
@@ -39,8 +26,6 @@ class BiometricManger(
             Log.d(tag, "setupKeyStoreAndKeyGenerator onFailure = $e")
         }
     }
-
-    fun canAuthenticate(authenticators: Int) = BiometricManager.from(context).canAuthenticate(authenticators)
 
     fun createKey(keyName: String, invalidatedByBiometricEnrollment: Boolean = false) {
         kotlin.runCatching {
@@ -96,17 +81,4 @@ class BiometricManger(
 
         return isException == null
     }
-
-    fun setUpBiometricPopUp(biometricPrompt: BiometricPrompt) {
-        this@BiometricManger.biometricPrompt = biometricPrompt
-    }
-
-    fun showBiometric(promptInfo: BiometricPrompt.PromptInfo) {
-        kotlin.runCatching {
-            biometricPrompt?.authenticate(promptInfo, BiometricPrompt.CryptoObject(defaultCipher!!))
-        }.onFailure { e ->
-            Log.d(tag, "showBiometric onFailure error = $e")
-        }
-    }
-
 }
